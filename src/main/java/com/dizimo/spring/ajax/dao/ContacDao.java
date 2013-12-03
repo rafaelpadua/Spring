@@ -3,9 +3,8 @@ package com.dizimo.spring.ajax.dao;
 
 import com.dizimo.spring.ajax.entity.Contact;
 import java.util.List;
-import org.hibernate.Criteria;
-import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,6 +28,7 @@ public class ContacDao implements IContactDao<Contact>{
         }
 
     @Override
+
     public Contact findByName(String firstName, String lastName) {
         return (Contact) factory.getCurrentSession().createCriteria(Contact.class)
                 .add(Restrictions.eq("firstName", firstName).ignoreCase())
@@ -40,5 +40,5 @@ public class ContacDao implements IContactDao<Contact>{
     public List<Contact> findByForstName(String firstName) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
 }

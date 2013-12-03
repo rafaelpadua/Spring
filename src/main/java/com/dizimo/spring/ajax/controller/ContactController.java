@@ -3,12 +3,10 @@ package com.dizimo.spring.ajax.controller;
 
 import com.dizimo.spring.ajax.dao.IContactDao;
 import com.dizimo.spring.ajax.entity.Contact;
-import java.io.Console;
-import java.lang.reflect.Method;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -33,6 +31,7 @@ public class ContactController {
     dao.save(contact);
     return contact;
     }
+
     
     @RequestMapping(value = "/getJSON/{firstName}/{lastName}", method = RequestMethod.GET)
     @ResponseBody
@@ -40,5 +39,6 @@ public class ContactController {
         Contact contact = dao.findByName(first, last);
         return contact;
     }
+
 
 }

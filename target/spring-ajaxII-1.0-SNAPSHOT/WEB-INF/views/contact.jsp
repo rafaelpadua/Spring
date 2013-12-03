@@ -13,6 +13,7 @@
         <link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet">
         <script src="${pageContext.request.contextPath}/resources/js/jquery-1.7.1.min.js"></script>
         <script src="${pageContext.request.contextPath}/resources/js/contact.js"></script>
+        <script src="<c:url value='/resources/js/contact.js'/>"></script>
     </head>
     <body>
         <div id="container">
